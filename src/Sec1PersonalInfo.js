@@ -11,7 +11,7 @@ const Sec1PersonalInfo = (props) => {
 						<input type="text" id="emailId1" name="email1" placeholder="Email*"/>
 						<input type="text" id="emailId2" name="email2" placeholder="Re-enter email*"/>
 					</div>
-					<div id="personalInfo-right" className="flex flex-column flex-child">
+					<div className="flex flex-column flex-child personalInfo-right">
 						<input type="text" id="phoneId" name="phone" placeholder="Phone*"/>
 					</div>
 				</div>

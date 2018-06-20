@@ -12,6 +12,8 @@ import SecHeader from './SecHeader';
 import Sec1PersonalInfo from './Sec1PersonalInfo';
 import Sec2SkillsLocation from './Sec2SkillsLocation';
 import Sec3Portfolio from './Sec3Portfolio';
+import SecFooter from './SecFooter';
+import SecHome from './SecHome';
 
 class App extends Component {
 
@@ -71,7 +73,7 @@ class App extends Component {
           <div className="bracket">
             <SecHeader />
             <Switch>
-              <Route exact strict path ="/" render={()=><div>Home</div>} />
+              <Route exact strict path ="/" component={SecHome} />
               <Route exact strict path ="/personal-information" component={Sec1PersonalInfo} />
               <Route exact strict path ="/skills-and-location" component={Sec2SkillsLocation} />
               <Route exact strict path ="/portfolio" component={Sec3Portfolio} />
@@ -79,6 +81,7 @@ class App extends Component {
               {/* renders error 404 page when path not found */}
               <Route render={() => <div>Error 404 - Page not found</div>} />
             </Switch>
+            <SecFooter />
           </div>
         </Router>
       </div>

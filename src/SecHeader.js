@@ -7,9 +7,12 @@ import {
 
 const SecHeader = () => {
     return (<section className='SecHeader'>
-        <div>Header says hello</div>
         <div>
-            <ul>
+			<h1>Lets talk</h1>
+			<p>Think you have what it takes? Show us.</p>
+		</div>
+        <div>
+            <ul className="navBar-container">
                 <li><NavLink exact activeStyle={{color:'orange'}} to="/">Home</NavLink></li>
                 <li><NavLink exact activeStyle={{color:'orange'}} to="/personal-information">Personal Information</NavLink></li>
                 <li><NavLink exact activeStyle={{color:'orange'}} to="/skills-and-location">Skills and Location</NavLink></li>

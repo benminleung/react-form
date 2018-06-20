@@ -1,7 +1,12 @@
 .SecHeader {
-
+	text-align: center;
 }
 
-.SecHeader ul{
+.navBar-container {
 	list-style-type: none;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	justify-content: center;
+	grid-column-gap: 2em;
 }

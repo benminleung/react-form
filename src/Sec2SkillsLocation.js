@@ -9,10 +9,10 @@ const Sec2SkillsLocation = () => {
 				<div className="flex flex-column">
 					<p id="">Which is your primary design discipline?</p>
 					<div id="skills-diciplineId" className="skills-dicipline flex flex-row flex-child buttonForm">
-						<input type="radio" className="diciplineButton" id="id1" /><label htmlFor="id1">Design Research</label>
-						<input type="radio" className="diciplineButton" id="id2" /><label htmlFor="id2">Visual Design</label>
-						<input type="radio" className="diciplineButton" id="id3" /><label htmlFor="id3">UX Design</label>
-						<input type="radio" className="diciplineButton" id="id4" /><label htmlFor="id4">Front-end Dev</label>
+						<input type="radio" name="diciplineButton" id="id1" /><label htmlFor="id1">Design Research</label>
+						<input type="radio" name="diciplineButton" id="id2" /><label htmlFor="id2">Visual Design</label>
+						<input type="radio" name="diciplineButton" id="id3" /><label htmlFor="id3">UX Design</label>
+						<input type="radio" name="diciplineButton" id="id4" /><label htmlFor="id4">Front-end Dev</label>
 					</div>
 				</div>
 				<div className="flex flex-row flex-child">
