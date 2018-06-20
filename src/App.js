@@ -33,7 +33,6 @@ class App extends Component {
       portfolio: '',
       moreInfo: ''
     }
-    
     this.nameChange = this.nameChange.bind(this);
     this.emailChange = this.emailChange.bind(this);
     this.phoneChange = this.phoneChange.bind(this);
