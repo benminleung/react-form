@@ -9,20 +9,22 @@ const Sec3Portfolio = props => {
             </p>
             <div>
             <input
+                value={props.state.portfolio}
                 type="text"
                 id="portfolioId"
                 name=""
                 placeholder="Portfolio link*"
             />
             <textarea
+                value={props.state.moreInfo}
                 rows="7"
                 className="style-rowPadding"
                 placeholder="Anything else (another link, availability, etc.)?"
             />
             </div>
         </div>
-        <div class="flex flex-row">
-            <div class="footer-submit" id="submitId">
+        <div className="flex flex-row">
+            <div className="footer-submit" id="submitId">
                 Submit
             </div>
         </div>
