@@ -2,9 +2,7 @@ import React from 'react';
 
 const Sec2SkillsLocation = (props) => {
 
-	const dicipline1Checkbox = (checkbox) => {
-		
-	}
+	const error = props.validate(props.state);
 
 	const dicipline2Checkbox = (checkbox) => {
 		const checkboxState = Object.assign({}, props.state.dicipline2);
@@ -34,6 +32,7 @@ const Sec2SkillsLocation = (props) => {
 					<input checked={props.state.dicipline1 === 'ux'} onChange={()=>props.dicipline1Change('ux')} type="radio" name="diciplineButton" id="id3" /><label htmlFor="id3">UX Design</label>
 					<input checked={props.state.dicipline1 === 'frontEnd'} onChange={()=>props.dicipline1Change('frontEnd')} type="radio" name="diciplineButton" id="id4" /><label htmlFor="id4">Front-end Dev</label>
 				</div>
+				<span className="invalidMessage">{error.dicipline1}</span>				
 			</div>
 			<div className="flex flex-row flex-child">
 
