@@ -17,8 +17,9 @@ const Sec3Portfolio = props => {
                         onChange={(e)=>props.universalChange('portfolio', e.target.value)}
                         type="text"
                         placeholder="Portfolio link*"
+                        onBlur = {() => props.isTouchedChange('portfolio')}
                     />
-                    <span className="invalidMessage">{error.portfolio}</span>
+                    {props.state.isTouched.portfolio && <span className="invalidMessage">{error.portfolio}</span>}
                 </div>
                 <textarea
                     value={props.state.moreInfo}

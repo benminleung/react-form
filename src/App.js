@@ -62,12 +62,14 @@ class App extends Component {
               <Route exact strict path ={nav.skillsLocation} render={() => <Sec2SkillsLocation 
                 state={this.state}
                 universalChange = {this.universalChange}
+                isTouchedChange = {this.isTouchedChange}
                 validate={Validation}/>}
               />
               <Route exact strict path ={nav.portfolio} render={()=><Sec3Portfolio
-                  state={this.state}
-                  universalChange = {this.universalChange}
-                  validate={Validation}/>}
+                state={this.state}
+                universalChange = {this.universalChange}
+                isTouchedChange = {this.isTouchedChange}
+                validate={Validation}/>}
               />
 
               {/* renders error 404 page when path not found */}
