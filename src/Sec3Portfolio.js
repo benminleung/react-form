@@ -1,5 +1,4 @@
 import React from "react";
-import Validation from "./Validation";
 
 const Sec3Portfolio = props => {
 
@@ -15,7 +14,7 @@ const Sec3Portfolio = props => {
                 <div className={error.portfolio ? "invalid inputContainer" : "inputContainer"}>
                     <input
                         value={props.state.portfolio}
-                        onChange={(e)=>props.portfolioChange(e.target.value)}
+                        onChange={(e)=>props.universalChange('portfolio', e.target.value)}
                         type="text"
                         placeholder="Portfolio link*"
                     />
@@ -23,7 +22,7 @@ const Sec3Portfolio = props => {
                 </div>
                 <textarea
                     value={props.state.moreInfo}
-                    onChange={(e)=>props.moreInfoChange(e.target.value)}
+                    onChange={(e)=>props.universalChange('moreInfo', e.target.value)}
                     rows="7"
                     className="style-rowPadding"
                     placeholder="Anything else (another link, availability, etc.)?"
@@ -31,8 +30,12 @@ const Sec3Portfolio = props => {
             </div>
         </div>
         <div className="flex flex-row">
-            <Validation state={props.state} validate={props.validate}/>
+            <button className="footer-submit" id="submitId" onClick={()=>Object.values(error).forEach(item=>console.log(item))}>
+                Submit
+            </button>
         </div>
+
+
     </section>);
 };
 

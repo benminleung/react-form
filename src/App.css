@@ -144,7 +144,7 @@ textarea {
 }
 
 .style-rowPadding {
-	margin-top: 2em;
+	margin: 2em 0;
 }
 
 input[type="text"], input[type="number"], input[type="phone"] {
@@ -173,3 +173,23 @@ input[type="text"], input[type="number"], input[type="phone"] {
 	.invalid {
 		border-bottom: thin solid tomato;
 	}
+
+.nextButton {
+	display: block;
+	padding: 1em 0em;
+	width: 12em;
+	text-align: center;
+	background-color: #00AFF2;
+  	color: inherit;
+	border: 1px solid #00AFF2;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.nextButton:hover {
+	background-color: #0092cc;
+	border: 1px solid #0092cc;
+}
+
+.nextButton:active {
+	border: 1px inset #0092cc;
+}
