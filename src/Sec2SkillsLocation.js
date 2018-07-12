@@ -1,24 +1,36 @@
 import React from 'react';
+import NextButton from './components/NextButton';
 
 const Sec2SkillsLocation = (props) => {
 
-	const dicipline1Checkbox = (checkbox) => {
-		
-	}
+	const error = props.validate(props.state);
 
 	const dicipline2Checkbox = (checkbox) => {
 		const checkboxState = Object.assign({}, props.state.dicipline2);
 		checkboxState[checkbox] = !checkboxState[checkbox];
 
-		props.dicipline2Change(checkboxState);
+		props.universalChange('dicipline2', checkboxState);
 	}
 
 	const locationCheckbox = (checkbox) => {
 		const checkboxState = Object.assign({}, props.state.location);
 		checkboxState[checkbox] = !checkboxState[checkbox];
 
-		props.locationChange(checkboxState);
+		props.universalChange('location', checkboxState);
 	}
+
+	const diciplineButton = (fieldName, text) => (
+		<div className="diciplineButton">
+			<input
+				checked={props.state.dicipline1 === fieldName}
+				onChange={()=>props.dicipline1Change(fieldName)}
+				type="radio"
+				name="diciplineButton"
+				id={fieldName}
+			/>
+			<label htmlFor={fieldName}>{text}</label>
+		</div>
+	)
 
  
 	return (<section>
@@ -29,11 +41,16 @@ const Sec2SkillsLocation = (props) => {
 			<div className="flex flex-column">
 				<p id="">Which is your primary design discipline?</p>
 				<div id="skills-diciplineId" className="skills-dicipline flex flex-row flex-child buttonForm">
-					<input checked={props.state.dicipline1 === 'design'} onChange={()=>props.dicipline1Change('design')} type="radio" name="diciplineButton" id="id1" /><label htmlFor="id1">Design Research</label>
-					<input checked={props.state.dicipline1 === 'visual'} onChange={()=>props.dicipline1Change('visual')} type="radio" name="diciplineButton" id="id2" /><label htmlFor="id2">Visual Design</label>
-					<input checked={props.state.dicipline1 === 'ux'} onChange={()=>props.dicipline1Change('ux')} type="radio" name="diciplineButton" id="id3" /><label htmlFor="id3">UX Design</label>
-					<input checked={props.state.dicipline1 === 'frontEnd'} onChange={()=>props.dicipline1Change('frontEnd')} type="radio" name="diciplineButton" id="id4" /><label htmlFor="id4">Front-end Dev</label>
+					{/* {diciplineButton('design', 'Design Research')}
+					{diciplineButton('visual', 'Visual Design')}
+					{diciplineButton('ux', 'UX Design')}
+					{diciplineButton('frontEnd', 'Front-end Dev')} */}
+					<input checked={props.state.dicipline1 === 'design'} onChange={()=>props.universalChange('dicipline1', 'design')} type="radio" name="diciplineButton" id="id1" /><label htmlFor="id1">Design Research</label>
+					<input checked={props.state.dicipline1 === 'visual'} onChange={()=>props.universalChange('dicipline1', 'visual')} type="radio" name="diciplineButton" id="id2" /><label htmlFor="id2">Visual Design</label>
+					<input checked={props.state.dicipline1 === 'ux'} onChange={()=>props.universalChange('dicipline1', 'ux')} type="radio" name="diciplineButton" id="id3" /><label htmlFor="id3">UX Design</label>
+					<input checked={props.state.dicipline1 === 'frontEnd'} onChange={()=>props.universalChange('dicipline1', 'frontEnd')} type="radio" name="diciplineButton" id="id4" /><label htmlFor="id4">Front-end Dev</label>
 				</div>
+				<span className="invalidMessage">{error.dicipline1}</span>				
 			</div>
 			<div className="flex flex-row flex-child">
 
@@ -98,7 +115,7 @@ const Sec2SkillsLocation = (props) => {
 					</div>
 				</div>
 			</div>
-			
+			<NextButton text='Portfolio' toLink='portfolio' />			
 		</div>
 	</section>)
 }
