@@ -6,8 +6,8 @@ const SecHome = (props) => {
     
     const testPersonState = Object.assign({}, props.state);
     console.log(testPersonState);
-    testPersonState.name = 'Firstname Lastname';
-    testPersonState.email = 'firstname.lastname@testperson.com';
+    testPersonState.name = 'Ben Leung';
+    testPersonState.email = 'ben.leung@testperson.com';
     testPersonState.phone = '+123 45 678 9000';
     testPersonState.address = 'Apt.12, 234 Test Street';
     testPersonState.city = 'Foo City';

@@ -57,7 +57,7 @@ const Sec1PersonalInfo = (props) => {
 				<div className="style-rowPadding">
 					<textarea
 						value={props.state.hearAboutUs}
-						onChange={(e) => props.hearAboutUsChange(e.target.value)}
+						onChange={(e) => props.universalChange('hearAboutUs' ,e.target.value)}
 						rows="3"
 						placeholder="How did you hear about us?"
                 	/>

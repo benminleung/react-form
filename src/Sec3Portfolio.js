@@ -1,8 +1,12 @@
 import React from "react";
 
 const Sec3Portfolio = props => {
-
-	const error = props.validate(props.state);
+    const { state: { name, email, }} = props;
+    const error = props.validate(props.state);
+    const isError = errorList => Object.keys(errorList).some(key => errorList[key] !== '');
+    const submitMessage = isError(error)
+        ? `You have missing or inccorect fields ${Object.keys(error).filter(key => !!error[key]).map(key => `\n${error[key]}`)}`
+        : `Thank you for submitting ${name}. You will recieve an email confirmation at ${email}`;
 
     return (<section>
         <div>
@@ -31,8 +35,10 @@ const Sec3Portfolio = props => {
             </div>
         </div>
         <div className="flex flex-row">
-            <button className="footer-submit" id="submitId" onClick={()=>Object.values(error).forEach(item=>console.log(item))}>
+            <button className="footer-submit" id="submitId" onClick={()=>window.alert(submitMessage)}>
+            {/* <button className="footer-submit" id="submitId" onClick={()=>Object.values(error).forEach(item=>console.log(item))}> */}
                 Submit
+                {console.log(props)}
             </button>
         </div>
 
