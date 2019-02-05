@@ -48,7 +48,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Router>
+        <Router basename={`${process.env.PUBLIC_URL}/`}>
           <div className="bracket">
             <SecHeader />
             <Switch>
